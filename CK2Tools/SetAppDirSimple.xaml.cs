@@ -143,6 +143,8 @@ namespace CK2Tools
             }
 
             AppSettings.SetAppDir(pathBox.Text);
+            Result = ReturnValue.OK;
+            Close();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
