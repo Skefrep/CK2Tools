@@ -153,6 +153,9 @@
   <data name="Global_BtOK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="Init_NoCK2Folder" xml:space="preserve">
+    <value>You must set a valid Crusader Kings II folder to use this application.</value>
+  </data>
   <data name="SetAppDirSimple_CK2NotValid" xml:space="preserve">
     <value>Invalid ck2 folder.</value>
   </data>

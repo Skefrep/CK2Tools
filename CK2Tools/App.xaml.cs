@@ -25,7 +25,10 @@ namespace CK2Tools
 
                     if (window.Result == SetAppDirSimple.ReturnValue.OK)
                         return;
-                    break;
+                    else
+                    {
+                        throw new System.Configuration.ConfigurationErrorsException(CK2Tools.Properties.Resources.Init_NoCK2Folder);
+                    }
             }
         }
 
