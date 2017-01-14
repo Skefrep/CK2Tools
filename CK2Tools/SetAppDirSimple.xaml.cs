@@ -142,7 +142,7 @@ namespace CK2Tools
                 return;
             }
 
-            AppSettings.SetAppDir(pathBox.Text);
+            AppSettings.ApplicationDir = pathBox.Text;
             Result = ReturnValue.OK;
             Close();
         }

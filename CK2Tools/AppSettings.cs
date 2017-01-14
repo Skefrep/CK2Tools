@@ -23,9 +23,15 @@ namespace CK2Tools
                 return eSettingsDirStatus.OK;
         }
 
-        public static void SetAppDir(string AppDir)
+        public static string ApplicationDir
         {
-            ConfigurationManager.AppSettings["ApplicationDir"] = AppDir;
+            get
+            {
+                return ConfigurationManager.AppSettings["ApplicationDir"];
+            }
+            set
+            {
+            }
         }
     }
 }
