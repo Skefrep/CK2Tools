@@ -2,7 +2,7 @@
 
 namespace CK2Tools
 {
-    public static class AppSettings
+    public static class UserSettings
     {
         public enum eSettingsDirStatus {
             OK = 0,
@@ -12,20 +12,28 @@ namespace CK2Tools
 
         public static eSettingsDirStatus IsAppDirDefined()
         {
-            string appDir = ConfigurationManager.AppSettings["ApplicationDir"];
+            string appDir = Properties.Settings.Default.ApplicationDir;
 
             if (string.IsNullOrWhiteSpace(appDir))
                 return eSettingsDirStatus.NotDefined;
 
-            if (System.IO.Directory.Exists(appDir))
+            if (!System.IO.Directory.Exists(appDir))
                 return eSettingsDirStatus.NotFound;
             else
                 return eSettingsDirStatus.OK;
         }
 
-        public static void SetAppDir(string AppDir)
+        public static string ApplicationDir
         {
-            ConfigurationManager.AppSettings["ApplicationDir"] = AppDir;
+            get
+            {
+                return Properties.Settings.Default.ApplicationDir;
+            }
+            set
+            {
+                Properties.Settings.Default.ApplicationDir = value;
+                Properties.Settings.Default.Save();
+            }
         }
     }
 }

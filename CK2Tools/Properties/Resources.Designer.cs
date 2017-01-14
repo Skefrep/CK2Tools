@@ -169,6 +169,15 @@ namespace CK2Tools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must set a valid Crusader Kings II folder to use this application..
+        /// </summary>
+        public static string Init_NoCK2Folder {
+            get {
+                return ResourceManager.GetString("Init_NoCK2Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid ck2 folder..
         /// </summary>
         public static string SetAppDirSimple_CK2NotValid {

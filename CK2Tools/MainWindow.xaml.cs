@@ -22,6 +22,27 @@ namespace CK2Tools
     {
         public MainWindow()
         {
+            var status = UserSettings.IsAppDirDefined();
+
+            switch (status)
+            {
+                case UserSettings.eSettingsDirStatus.OK:
+                    break;
+                case UserSettings.eSettingsDirStatus.NotFound:
+                    MessageBox.Show(CK2Tools.Properties.Resources.ConfigError_AppDirNotFound);
+                    goto case UserSettings.eSettingsDirStatus.NotDefined;
+                case UserSettings.eSettingsDirStatus.NotDefined:
+                    var window = new SetAppDirSimple();
+                    window.ShowDialog();
+
+                    if (window.Result == SetAppDirSimple.ReturnValue.OK)
+                        break;
+                    else
+                    {
+                        throw new System.Configuration.ConfigurationErrorsException(CK2Tools.Properties.Resources.Init_NoCK2Folder);
+                    }
+            }
+
             InitializeComponent();
             Appli = ((App)Application.Current);
         }
