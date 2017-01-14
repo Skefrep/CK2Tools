@@ -17,7 +17,7 @@ namespace CK2Tools
             if (string.IsNullOrWhiteSpace(appDir))
                 return eSettingsDirStatus.NotDefined;
 
-            if (System.IO.Directory.Exists(appDir))
+            if (!System.IO.Directory.Exists(appDir))
                 return eSettingsDirStatus.NotFound;
             else
                 return eSettingsDirStatus.OK;
