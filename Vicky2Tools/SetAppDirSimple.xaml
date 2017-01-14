@@ -1,0 +1,17 @@
+﻿<Window x:Class="CK2Tools.SetAppDirSimple"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:CK2Tools.Properties"
+        xmlns:local="clr-namespace:CK2Tools"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.Config_SelectAppDirSmallDlgTitle}" Height="150" Width="500">
+    <Grid>
+        <TextBlock x:Name="textBlock" Margin="10,10,10,0" TextWrapping="Wrap" Text="{x:Static p:Resources.Config_SelectAppDirSmallDlgDesc}" VerticalAlignment="Top" Height="35"/>
+        <TextBox x:Name="pathBox" Height="23" Margin="10,50,33,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="pathButton" Margin="0,50,10,0" VerticalAlignment="Top" Height="23" Content="…" HorizontalAlignment="Right" Width="23"/>
+        <Button x:Name="okButton" Content="{x:Static p:Resources.Global_BtOK}" Margin="0,0,90,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="okButton_Click"/>
+        <Button x:Name="cancelButton" Content="{x:Static p:Resources.Global_BtCancel}" Margin="0,0,10,10" Click="cancelButton_Click" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

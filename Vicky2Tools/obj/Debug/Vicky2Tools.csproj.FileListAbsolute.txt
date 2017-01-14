@@ -1,0 +1,14 @@
+c:\Dev\Vicky2Tools\Vicky2Tools\bin\Debug\Vicky2Tools.exe.config
+c:\Dev\Vicky2Tools\Vicky2Tools\bin\Debug\Vicky2Tools.exe
+c:\Dev\Vicky2Tools\Vicky2Tools\bin\Debug\Vicky2Tools.pdb
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\Vicky2Tools.csprojResolveAssemblyReference.cache
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\MainWindow.g.cs
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\App.g.cs
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\Vicky2Tools_MarkupCompile.cache
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\Vicky2Tools_MarkupCompile.lref
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\MainWindow.baml
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\Vicky2Tools.g.resources
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\Vicky2Tools.Properties.Resources.resources
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\Vicky2Tools.csproj.GenerateResource.Cache
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\Vicky2Tools.exe
+c:\Dev\Vicky2Tools\Vicky2Tools\obj\Debug\Vicky2Tools.pdb
