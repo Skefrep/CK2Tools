@@ -22,16 +22,16 @@ namespace CK2Tools
     {
         public MainWindow()
         {
-            var status = AppSettings.IsAppDirDefined();
+            var status = UserSettings.IsAppDirDefined();
 
             switch (status)
             {
-                case AppSettings.eSettingsDirStatus.OK:
+                case UserSettings.eSettingsDirStatus.OK:
                     break;
-                case AppSettings.eSettingsDirStatus.NotFound:
+                case UserSettings.eSettingsDirStatus.NotFound:
                     MessageBox.Show(CK2Tools.Properties.Resources.ConfigError_AppDirNotFound);
-                    goto case AppSettings.eSettingsDirStatus.NotDefined;
-                case AppSettings.eSettingsDirStatus.NotDefined:
+                    goto case UserSettings.eSettingsDirStatus.NotDefined;
+                case UserSettings.eSettingsDirStatus.NotDefined:
                     var window = new SetAppDirSimple();
                     window.ShowDialog();
 

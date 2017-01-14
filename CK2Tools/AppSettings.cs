@@ -2,7 +2,7 @@
 
 namespace CK2Tools
 {
-    public static class AppSettings
+    public static class UserSettings
     {
         public enum eSettingsDirStatus {
             OK = 0,
