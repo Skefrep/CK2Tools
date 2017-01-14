@@ -12,7 +12,7 @@ namespace CK2Tools
 
         public static eSettingsDirStatus IsAppDirDefined()
         {
-            string appDir = ConfigurationManager.AppSettings["ApplicationDir"];
+            string appDir = Properties.Settings.Default.ApplicationDir;
 
             if (string.IsNullOrWhiteSpace(appDir))
                 return eSettingsDirStatus.NotDefined;
@@ -27,10 +27,12 @@ namespace CK2Tools
         {
             get
             {
-                return ConfigurationManager.AppSettings["ApplicationDir"];
+                return Properties.Settings.Default.ApplicationDir;
             }
             set
             {
+                Properties.Settings.Default.ApplicationDir = value;
+                Properties.Settings.Default.Save();
             }
         }
     }
