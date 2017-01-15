@@ -58,6 +58,19 @@ namespace CK2Tools
                 recentModsMenu.Items.Add(item);
                 return;
             }
+
+            recentModsMenu.Items.Clear();
+            foreach (var entry in UserSettings.LastMods)
+            {
+                var item = new MenuItem();
+                item.Header = entry.name;
+                item.ToolTip = entry.path;
+                item.Click += (s, e) =>
+                {
+                    Appli.CurrentMod.ModFile = entry.path;
+                };
+                recentModsMenu.Items.Add(item);
+            }
         }
 
         public void FillFields()
