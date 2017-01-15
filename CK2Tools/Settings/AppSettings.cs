@@ -69,5 +69,29 @@ namespace CK2Tools
                 Properties.Settings.Default.Save();
             }
         }
+
+        public static void AddLastMod(string name, string path)
+        {
+            // If you already have opened this mod, we don't want it to appear twice
+            if (Properties.Settings.Default.LastMods.Contains(name))
+            {
+                int index = Properties.Settings.Default.LastMods.IndexOf(name);
+                if (Properties.Settings.Default.LastModsPaths[index] == path)
+                {
+                    Properties.Settings.Default.LastMods.RemoveAt(index);
+                    Properties.Settings.Default.LastModsPaths.RemoveAt(index);
+                }
+            }
+
+            Properties.Settings.Default.LastMods.Insert(0, name);
+            Properties.Settings.Default.LastModsPaths.Insert(0, path);
+
+            while (Properties.Settings.Default.LastMods.Count > 5)
+            {
+                Properties.Settings.Default.LastMods.RemoveAt(5);
+                Properties.Settings.Default.LastModsPaths.RemoveAt(5);
+            }
+            Properties.Settings.Default.Save();
+        }
     }
 }
