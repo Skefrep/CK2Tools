@@ -169,6 +169,15 @@ namespace CK2Tools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Empty.
+        /// </summary>
+        public static string Global_Empty {
+            get {
+                return ResourceManager.GetString("Global_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must set a valid Crusader Kings II folder to use this application..
         /// </summary>
         public static string Init_NoCK2Folder {
