@@ -61,6 +61,12 @@ namespace CK2Tools
             }
             set
             {
+                foreach(var mod in value)
+                {
+                    Properties.Settings.Default.LastMods[mod.id] = mod.name;
+                    Properties.Settings.Default.LastModsPaths[mod.id] = mod.path;
+                }
+                Properties.Settings.Default.Save();
             }
         }
     }
