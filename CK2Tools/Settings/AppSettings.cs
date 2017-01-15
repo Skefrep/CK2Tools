@@ -35,5 +35,15 @@ namespace CK2Tools
                 Properties.Settings.Default.Save();
             }
         }
+
+        public static System.Collections.Generic.List<KnownMod> LastMods
+        {
+            get
+            {
+            }
+            set
+            {
+            }
+        }
     }
 }
