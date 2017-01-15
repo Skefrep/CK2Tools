@@ -110,7 +110,6 @@ namespace CK2Tools
             if (openDialog.ShowDialog() == true)
             {
                 Appli.CurrentMod.ModFile = openDialog.FileName;
-                Appli.CurrentMod.DecodeFile(openDialog.FileName);
                 LoadRecentMenu();
             }
         }
