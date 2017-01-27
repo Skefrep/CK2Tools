@@ -44,7 +44,33 @@ namespace CK2Tools
             }
 
             InitializeComponent();
+            LoadRecentMenu();
             Appli = ((App)Application.Current);
+        }
+
+        private void LoadRecentMenu()
+        {
+            if (UserSettings.LastMods.Count == 0)
+            {
+                var item = new MenuItem();
+                item.Header = Properties.Resources.Global_Empty;
+                item.IsEnabled = false;
+                recentModsMenu.Items.Add(item);
+                return;
+            }
+
+            recentModsMenu.Items.Clear();
+            foreach (var entry in UserSettings.LastMods)
+            {
+                var item = new MenuItem();
+                item.Header = entry.name;
+                item.ToolTip = entry.path;
+                item.Click += (s, e) =>
+                {
+                    Appli.CurrentMod.ModFile = entry.path;
+                };
+                recentModsMenu.Items.Add(item);
+            }
         }
 
         public void FillFields()
@@ -69,6 +95,7 @@ namespace CK2Tools
             {
                 System.IO.File.Create(saveDialog.FileName);
                 Appli.CurrentMod.ModFile = saveDialog.FileName;
+                LoadRecentMenu();
             }
         }
 
@@ -83,7 +110,7 @@ namespace CK2Tools
             if (openDialog.ShowDialog() == true)
             {
                 Appli.CurrentMod.ModFile = openDialog.FileName;
-                Appli.CurrentMod.DecodeFile(openDialog.FileName);
+                LoadRecentMenu();
             }
         }
 

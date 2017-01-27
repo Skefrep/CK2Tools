@@ -166,8 +166,18 @@ namespace CK2Tools
             if (!bUserDirWritten)
                 writer.WriteLine("\tname=\"" + UserDirectory + "\"");
         }
+        
+        private string _modFile;
+        public string ModFile {
+            get { return _modFile; }
+            set
+            {
+                DecodeFile(value);
 
-        public string ModFile { get; set; }
+                _modFile = value;
+                UserSettings.AddLastMod(Name, value);
+            }
+        }
         public string Name { get; set; }
         public string Path { get; set; }
         public string UserDirectory { get; set; }

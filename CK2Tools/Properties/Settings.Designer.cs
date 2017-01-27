@@ -37,61 +37,23 @@ namespace CK2Tools.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastMod {
+        public global::System.Collections.Specialized.StringCollection LastMods {
             get {
-                return ((string)(this["LastMod"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["LastMods"]));
             }
             set {
-                this["LastMod"] = value;
+                this["LastMods"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastMod2 {
+        public global::System.Collections.Specialized.StringCollection LastModsPaths {
             get {
-                return ((string)(this["LastMod2"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["LastModsPaths"]));
             }
             set {
-                this["LastMod2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastMod3 {
-            get {
-                return ((string)(this["LastMod3"]));
-            }
-            set {
-                this["LastMod3"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastMod4 {
-            get {
-                return ((string)(this["LastMod4"]));
-            }
-            set {
-                this["LastMod4"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastMod5 {
-            get {
-                return ((string)(this["LastMod5"]));
-            }
-            set {
-                this["LastMod5"] = value;
+                this["LastModsPaths"] = value;
             }
         }
     }

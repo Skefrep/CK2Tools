@@ -15,15 +15,16 @@
                     <MenuItem Header="_Create Mod" Click="New_Click"/>
                     <MenuItem Header="_Open Mod" Click="Open_Click"/>
                     <MenuItem Header="_Save Mod" Click="Save_Click"/>
+                    <MenuItem x:Name="recentModsMenu" Header="_Recent Mods" />
                     <MenuItem Header="_Quit" />
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <Label x:Name="modNameLabel" Content="Mod Name:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,28,0,263"/>
-        <TextBox x:Name="modName" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,28,0,263" LostFocus="Set_Name" />
-        <Label x:Name="pathLabel" Content="Path:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,61,0,230"/>
-        <TextBox x:Name="path" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,61,0,230" LostFocus="Set_Path" />
-        <Label x:Name="userDirLabel" Content="User directory:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,94,0,197"/>
-        <TextBox x:Name="userDir" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,94,0,197" LostFocus="Set_UserDir" />
+        <Label x:Name="modNameLabel" Content="Mod Name:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="modName" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,28,0,0" LostFocus="Set_Name" VerticalAlignment="Top" />
+        <Label x:Name="pathLabel" Content="Path:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="path" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,61,0,0" LostFocus="Set_Path" VerticalAlignment="Top" />
+        <Label x:Name="userDirLabel" Content="User directory:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="userDir" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,94,0,0" LostFocus="Set_UserDir" VerticalAlignment="Top" />
     </Grid>
 </Window>
