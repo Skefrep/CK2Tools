@@ -58,6 +58,10 @@ namespace CK2Tools
                         ReplacePath.Add(values[1].Trim().Trim('"'));
                         break;
 
+                    case "picture":
+                        // Not managed for now
+                        break;
+
                     default:
                         throw new Exception("Unknown keyword in mod file: " + values[0]);
                 }
