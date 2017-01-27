@@ -147,5 +147,15 @@ namespace CK2Tools
         }
 
         private App Appli;
+
+        private void btnAddRepPath_Click(object sender, RoutedEventArgs e)
+        {
+            var left = btnAddRepPath.Margin.Left;
+            var top = btnAddRepPath.Margin.Top + 33;
+            btnAddRepPath.Margin = new Thickness(left, top, 0, 0);
+
+            if (this.Height < (top + 70))
+                this.Height = top + 70;
+        }
     }
 }
