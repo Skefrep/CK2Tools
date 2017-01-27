@@ -32,6 +32,10 @@ namespace CK2Tools
                 if (string.IsNullOrWhiteSpace(line))
                     continue;
 
+                var rgx = new Regex(@"^\s*[\{\}]+\s*$");
+                if (rgx.IsMatch(line))
+                    continue;
+
                 line = line.Trim();
 
                 var values = line.Split('=');
@@ -53,6 +57,14 @@ namespace CK2Tools
                     case "replace_path":
                         ReplacePath.Add(values[1].Trim().Trim('"'));
                         break;
+
+                    case "picture":
+                        // Not managed for now
+                        break;
+
+                    case "archive":
+                        MessageBox.Show(Properties.Resources.Open_ArchiveNotManaged_desc, Properties.Resources.Open_ArchiveNotManaged_title, MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
 
                     default:
                         throw new Exception("Unknown keyword in mod file: " + values[0]);

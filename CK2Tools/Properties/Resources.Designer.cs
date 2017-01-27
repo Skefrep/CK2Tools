@@ -187,6 +187,24 @@ namespace CK2Tools.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This tool is not designed to work with mods downloaded via steam..
+        /// </summary>
+        public static string Open_ArchiveNotManaged_desc {
+            get {
+                return ResourceManager.GetString("Open_ArchiveNotManaged_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Steam mods not supported.
+        /// </summary>
+        public static string Open_ArchiveNotManaged_title {
+            get {
+                return ResourceManager.GetString("Open_ArchiveNotManaged_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid ck2 folder..
         /// </summary>
         public static string SetAppDirSimple_CK2NotValid {
