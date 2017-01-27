@@ -62,6 +62,10 @@ namespace CK2Tools
                         // Not managed for now
                         break;
 
+                    case "archive":
+                        MessageBox.Show(Properties.Resources.Open_ArchiveNotManaged_desc, Properties.Resources.Open_ArchiveNotManaged_title, MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+
                     default:
                         throw new Exception("Unknown keyword in mod file: " + values[0]);
                 }
