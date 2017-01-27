@@ -26,7 +26,9 @@
         <TextBox x:Name="path" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,61,0,0" LostFocus="Set_Path" VerticalAlignment="Top" />
         <Label x:Name="userDirLabel" Content="User directory:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="userDir" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,94,0,0" LostFocus="Set_UserDir" VerticalAlignment="Top" />
-        <Button x:Name="btnAddRepPath" Content="Add Replace Path" HorizontalAlignment="Left" Margin="129,130,0,0" VerticalAlignment="Top" Width="120" Click="btnAddRepPath_Click" />
         <Label Content="Replace Paths:" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.846"/>
+        <Grid x:Name="gridRplPath" HorizontalAlignment="Left" Margin="129,130,0,0" VerticalAlignment="Top" Width="200">
+            <Button x:Name="btnAddRepPath" Content="Add Replace Path" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="120" Click="btnAddRepPath_Click" />
+        </Grid>
     </Grid>
 </Window>
