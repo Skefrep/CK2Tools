@@ -32,6 +32,10 @@ namespace CK2Tools
                 if (string.IsNullOrWhiteSpace(line))
                     continue;
 
+                var rgx = new Regex(@"^\s*[\{\}]+\s*$");
+                if (rgx.IsMatch(line))
+                    continue;
+
                 line = line.Trim();
 
                 var values = line.Split('=');
