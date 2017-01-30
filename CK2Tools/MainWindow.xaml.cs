@@ -50,6 +50,7 @@ namespace CK2Tools
 
             modName.TextChanged += NameChanged;
             path.TextChanged += PathChanged;
+            userDir.TextChanged += UserDirChanged;
         }
 
         private void LoadRecentMenu()
@@ -145,6 +146,11 @@ namespace CK2Tools
         private void PathChanged(object sender, RoutedEventArgs e)
         {
             Appli.CurrentMod.Path = path.Text;
+        }
+
+        private void UserDirChanged(object sender, RoutedEventArgs e)
+        {
+            Appli.CurrentMod.UserDirectory = userDir.Text;
         }
         #endregion
 
