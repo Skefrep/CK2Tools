@@ -46,6 +46,7 @@ namespace CK2Tools
             InitializeComponent();
             LoadRecentMenu();
             Appli = ((App)Application.Current);
+            RepPathNum = 0;
         }
 
         private void LoadRecentMenu()
@@ -146,6 +147,25 @@ namespace CK2Tools
             return modsPath;
         }
 
+        private void CreateReplacePathTextBox(string value = "")
+        {
+            var textBox = new TextBox();
+            textBox.VerticalAlignment = VerticalAlignment.Top;
+            textBox.HorizontalAlignment = HorizontalAlignment.Left;
+            textBox.Margin = new Thickness(0, 5, 0, 0);
+            textBox.Height = 28;
+            textBox.Width = 200;
+            textBox.Text = value;
+            textBox.Name = "replacePath_" + RepPathNum++;
+            textBox.TextChanged += ReplacePathChanged;
+            pannelRepPath.Children.Insert(pannelRepPath.Children.Count - 1, textBox);
+
+            if (Appli.CurrentMod.ReplacePath == null)
+                Appli.CurrentMod.ReplacePath = new List<string>();
+            if (Appli.CurrentMod.ReplacePath.Count < RepPathNum)
+                Appli.CurrentMod.ReplacePath.Add("");
+        }
+
         private App Appli;
 
         private void btnAddRepPath_Click(object sender, RoutedEventArgs e)
@@ -157,5 +177,7 @@ namespace CK2Tools
             if (this.Height < (top + 70))
                 this.Height = top + 70;
         }
+
+        private int RepPathNum;
     }
 }
