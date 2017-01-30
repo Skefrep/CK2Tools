@@ -71,6 +71,8 @@ namespace CK2Tools
                 Appli.CurrentMod.ModFile = saveDialog.FileName;
                 LoadRecentMenu();
             }
+
+            RefreshWindowBody();
         }
 
         private void Open_Click(object sender, RoutedEventArgs e)
@@ -86,6 +88,8 @@ namespace CK2Tools
                 Appli.CurrentMod.ModFile = openDialog.FileName;
                 LoadRecentMenu();
             }
+
+            RefreshWindowBody();
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -188,6 +192,7 @@ namespace CK2Tools
                 item.Click += (s, e) =>
                 {
                     Appli.CurrentMod.ModFile = entry.path;
+                    RefreshWindowBody();
                 };
                 recentModsMenu.Items.Add(item);
             }
