@@ -99,7 +99,7 @@ namespace CK2Tools
             if (string.IsNullOrEmpty(Path))
                 throw new Exception("The mod must have a path.");
 
-            if (new FileInfo(ModFile).Length == 0)
+            if (!System.IO.File.Exists(ModFile))
                 writeNewFile();
             else
                 writeExistingFile();
