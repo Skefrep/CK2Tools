@@ -47,6 +47,8 @@ namespace CK2Tools
             LoadRecentMenu();
             Appli = ((App)Application.Current);
             RepPathNum = 0;
+
+            modName.TextChanged += NameChanged;
         }
 
         private void LoadRecentMenu()
@@ -80,7 +82,6 @@ namespace CK2Tools
             path.Text = Appli.CurrentMod.Path;
             userDir.Text = Appli.CurrentMod.UserDirectory;
         }
-
 
         #region Dialog events
         private void New_Click(object sender, RoutedEventArgs e)
@@ -133,6 +134,11 @@ namespace CK2Tools
         private void Set_UserDir(object sender, RoutedEventArgs e)
         {
             ((App)Application.Current).CurrentMod.UserDirectory = userDir.Text;
+        }
+
+        private void NameChanged(object sender, RoutedEventArgs e)
+        {
+            Appli.CurrentMod.Name = modName.Text;
         }
         #endregion
 
