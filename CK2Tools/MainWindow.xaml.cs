@@ -53,31 +53,6 @@ namespace CK2Tools
             userDir.TextChanged += UserDirChanged;
         }
 
-        private void LoadRecentMenu()
-        {
-            if (UserSettings.LastMods.Count == 0)
-            {
-                var item = new MenuItem();
-                item.Header = Properties.Resources.Global_Empty;
-                item.IsEnabled = false;
-                recentModsMenu.Items.Add(item);
-                return;
-            }
-
-            recentModsMenu.Items.Clear();
-            foreach (var entry in UserSettings.LastMods)
-            {
-                var item = new MenuItem();
-                item.Header = entry.name;
-                item.ToolTip = entry.path;
-                item.Click += (s, e) =>
-                {
-                    Appli.CurrentMod.ModFile = entry.path;
-                };
-                recentModsMenu.Items.Add(item);
-            }
-        }
-
         public void FillFields()
         {
             modName.Text = Appli.CurrentMod.Name;
@@ -204,6 +179,31 @@ namespace CK2Tools
 
             if (this.Height < (top + 70))
                 this.Height = top + 70;
+        }
+
+        private void LoadRecentMenu()
+        {
+            if (UserSettings.LastMods.Count == 0)
+            {
+                var item = new MenuItem();
+                item.Header = Properties.Resources.Global_Empty;
+                item.IsEnabled = false;
+                recentModsMenu.Items.Add(item);
+                return;
+            }
+
+            recentModsMenu.Items.Clear();
+            foreach (var entry in UserSettings.LastMods)
+            {
+                var item = new MenuItem();
+                item.Header = entry.name;
+                item.ToolTip = entry.path;
+                item.Click += (s, e) =>
+                {
+                    Appli.CurrentMod.ModFile = entry.path;
+                };
+                recentModsMenu.Items.Add(item);
+            }
         }
 
         private int RepPathNum;
