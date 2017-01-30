@@ -152,6 +152,14 @@ namespace CK2Tools
         {
             Appli.CurrentMod.UserDirectory = userDir.Text;
         }
+
+        private void ReplacePathChanged(object sender, RoutedEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            int id;
+            int.TryParse(textBox.Name.Split('_')[1], out id);
+            Appli.CurrentMod.ReplacePath[id] = textBox.Text;
+        }
         #endregion
 
         private string GetModsDefaultPath(bool createIfNotExist)
