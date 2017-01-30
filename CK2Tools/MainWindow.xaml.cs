@@ -206,6 +206,11 @@ namespace CK2Tools
                 }
             }
         }
+
+        public void RefreshWindowBody()
+        {
+            Body.IsEnabled = !string.IsNullOrWhiteSpace(Appli.CurrentMod.ModFile);
+        }
         #endregion // Local Methods
 
         private App Appli;
