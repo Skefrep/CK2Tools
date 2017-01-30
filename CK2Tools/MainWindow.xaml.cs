@@ -97,7 +97,9 @@ namespace CK2Tools
             
             if (saveDialog.ShowDialog() == true)
             {
-                System.IO.File.Create(saveDialog.FileName);
+                var stream = System.IO.File.Create(saveDialog.FileName);
+                stream.Close();
+                stream.Dispose();
                 Appli.CurrentMod.ModFile = saveDialog.FileName;
                 LoadRecentMenu();
             }
