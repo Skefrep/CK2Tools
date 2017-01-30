@@ -11,7 +11,10 @@ namespace CK2Tools
 {
     public class Mod
     {
-        public Mod() { }
+        public Mod()
+        {
+            ReplacePath = new List<string>();
+        }
 
         ~Mod() { }
 
