@@ -168,8 +168,6 @@ namespace CK2Tools
                 Appli.CurrentMod.ReplacePath.Add("");
         }
 
-        private App Appli;
-
         private void LoadRecentMenu()
         {
             if (UserSettings.LastMods.Count == 0)
@@ -210,6 +208,7 @@ namespace CK2Tools
         }
         #endregion // Local Methods
 
+        private App Appli;
         private int RepPathNum;
     }
 }
