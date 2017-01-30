@@ -137,6 +137,7 @@ namespace CK2Tools
         }
         #endregion
 
+        #region Local Methods
         private string GetModsDefaultPath(bool createIfNotExist)
         {
             var modsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -207,6 +208,7 @@ namespace CK2Tools
                 }
             }
         }
+        #endregion // Local Methods
 
         private int RepPathNum;
     }
