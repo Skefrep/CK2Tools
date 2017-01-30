@@ -53,13 +53,6 @@ namespace CK2Tools
             userDir.TextChanged += UserDirChanged;
         }
 
-        public void FillFields()
-        {
-            modName.Text = Appli.CurrentMod.Name;
-            path.Text = Appli.CurrentMod.Path;
-            userDir.Text = Appli.CurrentMod.UserDirectory;
-        }
-
         #region Dialog events
         private void New_Click(object sender, RoutedEventArgs e)
         {
@@ -203,6 +196,20 @@ namespace CK2Tools
                     Appli.CurrentMod.ModFile = entry.path;
                 };
                 recentModsMenu.Items.Add(item);
+            }
+        }
+
+        public void FillFields()
+        {
+            modName.Text = Appli.CurrentMod.Name;
+            path.Text = Appli.CurrentMod.Path;
+            userDir.Text = Appli.CurrentMod.UserDirectory;
+            if (Appli.CurrentMod.ReplacePath != null)
+            {
+                foreach (var item in Appli.CurrentMod.ReplacePath)
+                {
+                    CreateReplacePathTextBox(item);
+                }
             }
         }
 
