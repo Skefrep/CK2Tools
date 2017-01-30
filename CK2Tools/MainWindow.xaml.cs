@@ -49,6 +49,7 @@ namespace CK2Tools
             RepPathNum = 0;
 
             modName.TextChanged += NameChanged;
+            path.TextChanged += PathChanged;
         }
 
         private void LoadRecentMenu()
@@ -139,6 +140,11 @@ namespace CK2Tools
         private void NameChanged(object sender, RoutedEventArgs e)
         {
             Appli.CurrentMod.Name = modName.Text;
+        }
+
+        private void PathChanged(object sender, RoutedEventArgs e)
+        {
+            Appli.CurrentMod.Path = path.Text;
         }
         #endregion
 
