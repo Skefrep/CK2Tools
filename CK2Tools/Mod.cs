@@ -11,7 +11,10 @@ namespace CK2Tools
 {
     public class Mod
     {
-        public Mod() { }
+        public Mod()
+        {
+            ReplacePath = new List<string>();
+        }
 
         ~Mod() { }
 
@@ -66,6 +69,10 @@ namespace CK2Tools
                         MessageBox.Show(Properties.Resources.Open_ArchiveNotManaged_desc, Properties.Resources.Open_ArchiveNotManaged_title, MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
 
+                    case "tags":
+                        // Not managed for now
+                        break;
+
                     default:
                         throw new Exception("Unknown keyword in mod file: " + values[0]);
                 }
@@ -95,7 +102,7 @@ namespace CK2Tools
             if (string.IsNullOrEmpty(Path))
                 throw new Exception("The mod must have a path.");
 
-            if (new FileInfo(ModFile).Length == 0)
+            if (!System.IO.File.Exists(ModFile))
                 writeNewFile();
             else
                 writeExistingFile();

@@ -20,11 +20,17 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <Label x:Name="modNameLabel" Content="Mod Name:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="modName" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,28,0,0" LostFocus="Set_Name" VerticalAlignment="Top" />
-        <Label x:Name="pathLabel" Content="Path:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="path" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,61,0,0" LostFocus="Set_Path" VerticalAlignment="Top" />
-        <Label x:Name="userDirLabel" Content="User directory:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="userDir" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,94,0,0" LostFocus="Set_UserDir" VerticalAlignment="Top" />
+        <Grid x:Name="Body" IsEnabled="False">
+            <Label x:Name="modNameLabel" Content="Mod Name:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="modName" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,28,0,0" LostFocus="Set_Name" VerticalAlignment="Top" />
+            <Label x:Name="pathLabel" Content="Path:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="path" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,61,0,0" LostFocus="Set_Path" VerticalAlignment="Top" />
+            <Label x:Name="userDirLabel" Content="User directory:" Height="28" Width="114" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="userDir" HorizontalAlignment="Left" Height="28" Width="200" Margin="129,94,0,0" LostFocus="Set_UserDir" VerticalAlignment="Top" />
+            <Label Content="Replace Paths:" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.658,-0.846"/>
+            <WrapPanel x:Name="pannelRepPath" HorizontalAlignment="Left" Margin="129,122,0,0" VerticalAlignment="Top" Width="200">
+                <Button x:Name="btnAddRepPath" Content="Add Replace Path" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0" Width="120" Click="btnAddRepPath_Click" />
+            </WrapPanel>
+        </Grid>
     </Grid>
 </Window>
