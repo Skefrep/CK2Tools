@@ -14,6 +14,7 @@ namespace CK2Tools
         public Mod()
         {
             ReplacePath = new List<string>();
+            Tags = new List<string>();
         }
 
         ~Mod() { }
@@ -70,7 +71,7 @@ namespace CK2Tools
                         return;
 
                     case "tags":
-                        // Not managed for now
+                        ReadTags(stream, values[1]);
                         break;
 
                     default:
@@ -80,6 +81,39 @@ namespace CK2Tools
             stream.Close();
 
             ((MainWindow)(Application.Current.MainWindow)).FillFields();
+        }
+
+        void ReadTags(StreamReader stream, string value)
+        {
+            while (string.IsNullOrWhiteSpace(value))
+            {
+                value = stream.ReadLine();
+            }
+            value.Trim();
+
+            if (value.First() != '{')
+                throw new Exception("Invalid tag value!");
+            value.TrimStart('{');
+
+            while (string.IsNullOrWhiteSpace(value))
+            {
+                value = stream.ReadLine();
+            }
+
+            string[] tagsToAdd;
+            bool bGotEnd = false;
+            do
+            {
+                value.Trim();
+                if (value.Last() == '}')
+                {
+                    value.TrimEnd('}');
+                    bGotEnd = true;
+                }
+                
+                tagsToAdd = value.Split((string[])null, StringSplitOptions.RemoveEmptyEntries);
+                Tags.AddRange(tagsToAdd);
+            } while (!bGotEnd);
         }
 
         public void WriteFile()
@@ -201,5 +235,6 @@ namespace CK2Tools
         public string Path { get; set; }
         public string UserDirectory { get; set; }
         public List<string> ReplacePath { get; set; }
+        public List<string> Tags { get; set; }
     }
 }
