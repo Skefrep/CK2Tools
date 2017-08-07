@@ -37,7 +37,7 @@ namespace CK2Tools
         /// </summary>
         private void SetPathBoxValue()
         {
-            if (!string.IsNullOrWhiteSpace(System.Configuration.ConfigurationManager.AppSettings["ApplicationDir"]))
+            if (!String.IsNullOrWhiteSpace(System.Configuration.ConfigurationManager.AppSettings["ApplicationDir"]))
             {
                 pathBox.Text = System.Configuration.ConfigurationManager.AppSettings["ApplicationDir"];
                 return;
@@ -48,10 +48,10 @@ namespace CK2Tools
         /// <summary>
         /// Test if theres a CK2 folder set in the registry or in the steam libraries
         /// </summary>
-        /// <returns>The path to CK2 if found. Empty string otherwise.</returns>
-        private string TryCommonAppPaths()
+        /// <returns>The path to CK2 if found. Empty String otherwise.</returns>
+        private String TryCommonAppPaths()
         {
-            string path;
+            String path;
 
             // Check if there's a paradox key to CK2
             if (TryCKInstallerKey(out path))
@@ -67,9 +67,9 @@ namespace CK2Tools
         /// <summary>
         /// Checks if there's a registry key containing the CK2 folder, as created by the official installer.
         /// </summary>
-        /// <param name="path">Output parameter where the registry key will be stored. Empty string if not found.</param>
+        /// <param name="path">Output parameter where the registry key will be stored. Empty String if not found.</param>
         /// <returns>True if key has been found, false otherwise</returns>
-        private bool TryCKInstallerKey(out string path)
+        private bool TryCKInstallerKey(out String path)
         {
             RegistryKey regKey = Registry.LocalMachine;
             regKey = regKey.OpenSubKey(@"SOFTWARE\WOW6432Node\Paradox Interactive\CrusaderKingsII");
@@ -89,7 +89,7 @@ namespace CK2Tools
         /// </summary>
         /// <param name="path"></param>
         /// <returns>True if path to CK2 has been found, false otherwise</returns>
-        private bool TrySteamInstallDirs(out string path)
+        private bool TrySteamInstallDirs(out String path)
         {
             // First, try default steam library
             RegistryKey regKey = Registry.CurrentUser;
@@ -97,7 +97,7 @@ namespace CK2Tools
 
             if (regKey != null)
             {
-                string steamPath = regKey.GetValue("SteamPath").ToString();
+                String steamPath = regKey.GetValue("SteamPath").ToString();
                 path = System.IO.Path.Combine(steamPath, "steamapps", "common", "Crusader Kings II");
                 if (CheckValidCK2Folder(path))
                     return true;
@@ -128,7 +128,7 @@ namespace CK2Tools
         /// </summary>
         /// <param name="path">Path to the directory to check</param>
         /// <returns>true if file present, false otherwise.</returns>
-        private bool CheckValidCK2Folder(string path)
+        private bool CheckValidCK2Folder(String path)
         {
             return File.Exists(System.IO.Path.Combine(path, "CK2game.exe"));
         }

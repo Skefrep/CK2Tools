@@ -51,6 +51,7 @@ namespace CK2Tools
             modName.TextChanged += NameChanged;
             path.TextChanged += PathChanged;
             userDir.TextChanged += UserDirChanged;
+            tags.TokenDelimiter = ";";
         }
 
         #region Dialog events
@@ -139,6 +140,11 @@ namespace CK2Tools
             int.TryParse(textBox.Name.Split('_')[1], out id);
             Appli.CurrentMod.ReplacePath[id] = textBox.Text;
         }
+
+        private void TagsChanged(object sender, RoutedEventArgs e)
+        {
+            MoveReplacePathGrid();
+        }
         #endregion
 
         #region Local Methods
@@ -196,6 +202,14 @@ namespace CK2Tools
                 };
                 recentModsMenu.Items.Add(item);
             }
+        }
+
+        private void MoveReplacePathGrid()
+        {
+            var newMargin = new Thickness(RepPathLabel.Margin.Left, tags.Margin.Top + tags.ActualHeight + 5, RepPathLabel.Margin.Right, RepPathLabel.Margin.Bottom);
+            RepPathLabel.Margin = newMargin;
+            newMargin = new Thickness(pannelRepPath.Margin.Left, tags.Margin.Top + tags.ActualHeight, pannelRepPath.Margin.Right, pannelRepPath.Margin.Bottom);
+            pannelRepPath.Margin = newMargin;
         }
 
         public void FillFields()
